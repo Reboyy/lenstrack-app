@@ -1,0 +1,28 @@
+{
+  "node": {
+    "408ad24d777f6cf798724ad5f3ab70f73ef34d842d": {
+      "workers": {
+        "app/(main)/clients/page": {
+          "moduleId": "[project]/.next-internal/server/app/(main)/clients/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/ai/flows/client-overview-flow.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/(main)/clients/page": "action-browser"
+      }
+    },
+    "405d46ee34c57318ed9262b421259592aef3acc8ae": {
+      "workers": {
+        "app/(main)/logs/page": {
+          "moduleId": "[project]/.next-internal/server/app/(main)/logs/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/ai/flows/summarize-logs-flow.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/(main)/logs/page": "action-browser"
+      }
+    }
+  },
+  "edge": {},
+  "encryptionKey": "Va7VVy7uFLY1wfhPL1FdIREw7sGOXHMMBzjpUwaJNYU="
+}

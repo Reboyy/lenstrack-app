@@ -1,63 +1,118 @@
-LensTrack Pro ✨
-Selamat Datang di LensTrack Pro! 🎉
-LensTrack Pro adalah aplikasi web manajemen klien dan proyek yang cerdas, dirancang untuk menyederhanakan alur kerja tim Anda. Dibangun dengan Firebase Studio, kami membantu Anda mengelola klien, melacak proyek, dan mendokumentasikan semua komunikasi penting di satu tempat yang mudah diakses. Fokus pada inovasi, biarkan kami mengurus organisasinya!
+# LensTrack Pro - Client Management System
 
-Fitur Utama 🚀
-Dashboard Interaktif: Dapatkan gambaran visual cepat tentang status proyek dan aktivitas terbaru.
+Welcome to LensTrack Pro! This is a modern, full-stack Client Management System (CRM) designed to help freelancers and small agencies track their clients, projects, and communications efficiently. The application is enhanced with powerful AI features to provide smart insights and automate summarization tasks.
 
-Manajemen Klien: Kelola detail klien dan riwayat interaksi dengan mudah.
+![LensTrack Pro Screenshot](https://placehold.co/800x450.png?text=LensTrack+Pro+App+UI)
+*<p align="center">A placeholder for the app's dashboard screenshot.</p>*
 
-Pelacakan Proyek Aktif: Pantau kemajuan proyek, tenggat waktu, dan tugas.
+---
 
-Catatan Komunikasi (Comm. Logs): Simpan semua percakapan dan keputusan penting.
+## ✨ Key Features
 
-Instalasi Cepat! 🛠️
-Siap untuk memulai? Ikuti langkah-langkah sederhana ini:
+- **🔐 Authentication:** Secure user login and registration system.
+- **📊 Interactive Dashboard:** Get a quick overview of key metrics like total clients, active projects, and new clients this month.
+- **👤 Client Management:** Full CRUD (Create, Read, Update, Delete) functionality for managing client data.
+- **📁 Project Tracking:** Keep track of all projects, their status, deadlines, and the person in charge.
+- **📞 Communication Logging:** Record every interaction with clients, whether through email, WhatsApp, or meetings.
+- **🤖 AI-Powered Overview:** With a single click, generate a comprehensive AI summary for any client, analyzing their projects and recent communications to identify risks and provide recommendations.
+- **💡 AI Log Summarization:** Automatically summarize long communication histories to get the key points without reading everything.
+- **↓ Export to CSV:** Easily export your client list to a CSV file.
+- **📱 Responsive Design:** Fully responsive interface that works on both desktop and mobile devices.
 
-Kloning Repositori:
+---
 
-git clone https://github.com/your-username/lenstrack-pro.git
-cd lenstrack-pro
+## 🛠️ Tech Stack
 
-Konfigurasi Firebase:
+This project is built with a modern, robust, and scalable tech stack:
 
-Buat proyek di Firebase Console.
+- **Framework:** [Next.js](https://nextjs.org/) (App Router)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components:** [ShadCN UI](https://ui.shadcn.com/)
+- **AI Integration:** [Google AI & Genkit](https://firebase.google.com/docs/genkit)
+- **Database:** [Firebase Realtime Database](https://firebase.google.com/docs/database)
+- **Authentication:** [Firebase Authentication](https://firebase.google.com/docs/auth)
 
-Aktifkan Firestore Database dan Authentication.
+---
 
-Buat file .env di root proyek Anda dan tambahkan konfigurasi Firebase Anda:
+## 🚀 Getting Started
 
-VITE_FIREBASE_API_KEY=your_api_key
-VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
-VITE_FIREBASE_PROJECT_ID=your_project_id
-VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
-VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
-VITE_FIREBASE_APP_ID=your_app_id
-VITE_FIREBASE_MEASUREMENT_ID=your_measurement_id
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
-Instal Dependensi:
+### Prerequisites
 
-npm install
-# atau
-yarn install
+Make sure you have the following software installed on your computer:
+- [Node.js](https://nodejs.org/) (v18 or newer recommended)
+- [npm](https://www.npmjs.com/) (usually comes with Node.js)
 
-Jalankan Aplikasi:
+### Installation Guide
 
-npm run dev
-# atau
-yarn dev
+1.  **Clone the Repository**
+    - If you have cloned this project from GitHub, you can skip this step. Otherwise, clone the repository to your local machine:
+    ```bash
+    git clone https://github.com/your-username/your-repo-name.git
+    cd your-repo-name
+    ```
 
-Aplikasi akan berjalan di http://localhost:5173.
+2.  **Install Dependencies**
+    - Open your terminal in the project directory and run the following command to install all the necessary packages:
+    ```bash
+    npm install
+    ```
 
-Teknologi yang Digunakan 💻
-Frontend: HTML, JavaScript, React.js, Tailwind CSS
+3.  **Set Up Firebase**
+    - This application requires a Firebase project to handle the database and user authentication.
+    - **a. Create a Firebase Project:**
+        - Go to the [Firebase Console](https://console.firebase.google.com/).
+        - Click on "Add project" and follow the on-screen instructions.
+    - **b. Set Up Authentication:**
+        - In your new Firebase project, go to the "Authentication" section from the left sidebar.
+        - Click "Get started" and choose **Email/Password** from the list of sign-in methods.
+        - Enable it and click "Save".
+    - **c. Set Up Realtime Database:**
+        - Go to the "Realtime Database" section (or "Build" > "Realtime Database").
+        - Click "Create database" and choose a location.
+        - Start in **test mode** for now (this allows read/write access without authentication rules, which is fine for local development).
+    - **d. Get Your Firebase Config:**
+        - Go to your Project Settings (click the ⚙️ icon next to "Project Overview").
+        - Scroll down to the "Your apps" section.
+        - Click on the web icon `</>` to register a new web app.
+        - Give it a nickname (e.g., "LensTrack Web") and click "Register app".
+        - Firebase will provide you with a `firebaseConfig` object. Copy this object.
+    - **e. Add Config to the Project:**
+        - Open the file `src/lib/firebase.ts`.
+        - **Replace** the existing `firebaseConfig` object with the one you copied from your Firebase project.
 
-Backend & Database: Google Firebase (Firestore, Authentication)
+4.  **Set Up Environment Variables for AI (Optional but Recommended)**
+    - For AI features to work, you need a Google AI API key.
+    - **a. Get an API Key:**
+        - Go to [Google AI Studio](https://aistudio.google.com/app/apikey).
+        - Click "Create API key in new project".
+        - Copy the generated API key.
+    - **b. Add Key to Environment File:**
+        - In the root of your project, find the `.env` file (if it doesn't exist, create it).
+        - Add the following line, replacing `YOUR_API_KEY` with the key you just copied:
+        ```
+        GOOGLE_API_KEY=YOUR_API_KEY
+        ```
 
-Kontribusi 🤝
-Kami menyambut kontribusi! Fork repositori, buat branch baru, lakukan perubahan, commit, push, lalu buka Pull Request.
+### Running the Application
 
-Lisensi 📄
-Proyek ini dilisensikan di bawah Lisensi MIT. Lihat file LICENSE untuk detail.
+You need to run two processes in separate terminals for the full application (including AI features) to work.
 
-Dibuat dengan ❤️ oleh Tim Anda.
+1.  **Start the Main Application (Next.js):**
+    - In your first terminal, run:
+    ```bash
+    npm run dev
+    ```
+    - Your app should now be running at [http://localhost:9002](http://localhost:9002).
+
+2.  **Start the AI Service (Genkit):**
+    - Open a **new, second terminal** in the same project directory.
+    - Run the following command:
+    ```bash
+    npm run genkit:dev
+    ```
+    - This starts the local server that handles all the AI-related requests.
+
+Now you can open your browser, navigate to `http://localhost:9002`, and start using LensTrack Pro!
